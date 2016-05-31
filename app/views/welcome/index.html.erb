@@ -1,0 +1,44 @@
+<div ng-controller="QuestionsController">
+<header>
+  <h1 class="center-align">Help-Me</h1>
+</header>
+  <div>
+    <form class="col s12">
+      <div class="row">
+        <div class="input-field col s2 offset-s1 ">
+          <input placeholder="Name" id="name" type="text" ng-model="name">
+        </div>
+        <div class="input-field col s2">
+          <input placeholder="Email Address" id="email" type="text" name="name" ng-model="email">
+        </div>
+        <div class="input-field col s2">
+          <input placeholder="Subject" id="subject" type="text" name="name" ng-model="subject">
+        </div>
+        <div class="input-field col s2">
+          <input placeholder="Description" id="description" type="text" name="name" ng-model="description">
+        </div>
+        <div class="input-field col s2">
+          <button class="btn waves-effect waves-light blue-grey lighten-5 black-text " type="submit" name="button" ng-click="createQuestion(newQuestion)">Create</button>
+        </div>
+      </div>
+    </form>
+
+    <div class="col s12">
+      <div class="row">
+        <div class="card blue darken-4 border">
+          <ul>
+            <li class="center-align" ng-repeat="question in questions">
+              <p class="list-items">Name: {{question.name}}</p>
+              <p class="list-items">Email: {{question.email}}</p>
+              <p class="list-items">Subject: {{question.subject}}</p>
+              <p class="list-items">Question: {{question.description}}</p>
+              <a class="black-text" type="button" name="button" ng-click="deleteQuestion(question)">X</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
